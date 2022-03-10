@@ -68,6 +68,7 @@ addPaciente() {
 }
 
 viewList() {
+  print("\x1B[2J\x1B[0;0H");
   print("""
 ┌───────────────────────────────────────────────┐
 │                                               │
@@ -78,7 +79,7 @@ viewList() {
 │                                               │
 │                   Resultados:                 │
 │                                               │
-│5.1 retroceder                    5.2 siguiente│
+│5.1 volver al inicio              5.2 siguiente│
 └───────────────────────────────────────────────┘
 """);
 }

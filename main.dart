@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'libs/SinglyLinkedList/List.dart';
-import 'libs/patient.dart';
 import 'libs/interface.dart';
 import 'libs/logicGate.dart';
 
@@ -11,7 +10,6 @@ void main(List<String> args) {
   menu();
   mainLoop:
   while (true) {
-    print(listaPacientes);
     String? controller = stdin.readLineSync();
     switch (controller) {
       //Salir del programa------------------------------------------------------
@@ -51,7 +49,18 @@ void main(List<String> args) {
         break;
       //Ver lista total de pacientes--------------------------------------------
       case "5":
+        viewList();
         viewPacientes(listaPacientes);
+        break;
+      //Reiniciar Página de vista-----------------------------------------------
+      case "5.1":
+        viewList();
+        viewPacientes(listaPacientes);
+        break;
+      //Siguiente pagina de vista-----------------------------------------------
+      case "5.2":
+        viewList();
+        viewNextPacientes();
         break;
     }
   }

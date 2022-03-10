@@ -238,8 +238,24 @@ editPaciente(SinglyLinkedList list) {
   }
 }
 
+int control = 0;
+Node? tempNode;
 //VER LISTA GENERAL //1O POR PÁGINA
 viewPacientes(SinglyLinkedList list) {
-  print("\x1B[2J\x1B[0;0H");
-  viewList();
+  tempNode = list.head;
+  while (tempNode != null && control != 10) {
+    print("\n${tempNode?.object}");
+    control++;
+    tempNode = tempNode?.next;
+  }
+  control = 0;
+}
+
+viewNextPacientes() {
+  while (tempNode != null && control != 10) {
+    print("\n${tempNode?.object}");
+    control++;
+    tempNode = tempNode?.next;
+  }
+  control = 0;
 }
